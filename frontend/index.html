@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Hospital Infection Dashboard test</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 20px;
+            }
+            h1 {
+                color: #333;
+            }
+            h2 {
+                color: #555;
+            }
+            p {
+                line-height: 1.6;
+            }
+            .card {
+                background-color: #f9f9f9;
+                border: 1px solid #ddd;
+                border-radius: 5px;
+                padding: 20px;
+                margin-bottom: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="card">
+            <h1>Hospital Infection Dashboard</h1>
+            <p id = 'msg'>Welcome to the Hospital Infection Dashboard. Here you can find information about various infections and their statistics.</p>
+            <button onclick="updateMessage()">Update Message</button>
+        </div>
+        <script>
+            function updateMessage() {
+                const msgElement = document.getElementById('msg');
+                msgElement.textContent = 'The message has been updated!';
+            }
+            function handleQuestion() {
+                const questionElement = document.getElementById('question');
+                questionElement.textContent = 'Thank you for your question! We will get back to you shortly.';
+            }
+        </script>
+        <div class="card">
+            <h2>BI</h2>
+            <p>
+                Covid 100 cases.
+                Flu 50 cases.
+            </p>
+            <h2>QA</h2>
+                <p id="question">
+                    What is your question? 
+                </p>
+                <p>
+                    <button onclick="handleQuestion()">Click Here</button>
+                </p>
+            <h2>MAP</h2>
+                <p>
+                    Map content goes here.
+                </p>
+        </body>
+    </head>
+</html>    
