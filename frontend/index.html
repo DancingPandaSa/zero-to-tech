@@ -1,37 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Hospital Infection Dashboard test</title>
-        <link rel="stylesheet" href="./style.css">
-    </head>
-    <body>
-        <div class="card">
-            <h1>Hospital Infection Dashboard</h1>
-            <h2>Infection Statistics git</h2>
-            <p id = 'msg'>Welcome to the Hospital Infection Dashboard. Here you can find information about various infections and their statistics.</p>
-            <button onclick="updateMessage()">Update Message</button>
-        </div>
-        <script src="./script.js"></script>
-
-        <div class="card">
-            <h2>BI</h2>
-            <p>
-                Covid 100 cases.
-                Flu 50 cases.
-            </p>
-            <h2>QA</h2>
-                <p id="question">
-                    What is your question? 
-                </p>
-                <p>
-                    <button onclick="handleQuestion()">Click Here</button>
-                </p>
-            <h2>MAP</h2>
-                <p>
-                    Map content goes here.
-                </p>
-        </body>
-    </head>
-</html>    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Infection Dashboard</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <header class="header">
+        <h1>Hospital Infection Dashboard</h1>
+        <nav class="tabs" aria-label="Dashboard pages">
+            <button class="tab-button active" data-page="bi-page" aria-pressed="true">BI &amp; AI</button>
+            <button class="tab-button" data-page="map-page" aria-pressed="false">MAP</button>
+        </nav>
+    </header>
+    <main>
+        <section id="bi-page" class="tab-content active">
+            <div class="card">
+                <h2>Infection Statistics</h2>
+                <p id="msg">Welcome to the Hospital Infection Dashboard.</p>
+                <button id="update-button">Update Message</button>
+            </div>
+            <div class="card">
+                <h2>BI Dashboard</h2>
+                <div class="statistics">
+                    <div class="stat-card"><h3>COVID-19</h3><p class="number" data-target="100">100</p><p>Cases</p></div>
+                    <div class="stat-card"><h3>Influenza</h3><p class="number" data-target="50">50</p><p>Cases</p></div>
+                    <div class="stat-card"><h3>Total Cases</h3><p class="number" data-target="150">150</p><p>Cases</p></div>
+                </div>
+            </div>
+            <div class="card">
+                <h2>AI Question &amp; Answer</h2>
+                <label for="question-input">What is your question?</label>
+                <form id="qa-form">
+                    <input id="question-input" placeholder="Enter your question...">
+                    <button type="submit">Ask AI</button>
+                </form>
+                <p id="answer" aria-live="polite"></p>
+            </div>
+        </section>
+        <section id="map-page" class="tab-content">
+            <div class="card"><h2>Hospital Infection Map</h2><div class="map-container">Map content goes here.</div></div>
+        </section>
+    </main>
+    <script type="module" src="./js/main.js"></script>
+</body>
+</html>
