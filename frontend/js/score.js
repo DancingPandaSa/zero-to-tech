@@ -1,5 +1,5 @@
 
-import { animate } from 'https://cdn.jsdelivr.net/npm/animejs@4/+esm';
+import { animate } from "animejs";
 
 const animations = new WeakMap();
 
